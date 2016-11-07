@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.IO;
 using System.Net.WebSockets;
 using System.Threading;
@@ -11,7 +10,7 @@ namespace SocialWeather
 {
     public class Program
     {
-        private const string Url = "ws://localhost:5000/weather/ws?formatType=protobuf&format=binary";
+        private const string Url = "ws://socialweather.azurewebsites.net/weather/ws?formatType=protobuf&format=binary";
 
         public static void Main(string[] args)
         {
