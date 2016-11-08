@@ -5,7 +5,7 @@ ws:on("connection", function(ws)
 end)
 
 ws:on("receive", function(_, msg, opcode)
-  print('Weather updated');
+  print('Weather updated: '..msg);
 
   captions = { "Temperature: ", "Last updated: ", "Weather: ", "ZipCode: " }
   weather = { "Sunny", "Mostly Sunny", "Partly Sunny", "Partly Cloudy", "Mostly Cloudy", "Cloudy" }
