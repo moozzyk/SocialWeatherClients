@@ -81,7 +81,6 @@ namespace SocialWeather
                 var outputStream = new CodedOutputStream(stream, leaveOpen: true);
                 outputStream.WriteMessage(protoWeatherReport);
                 outputStream.Flush();
-                // var buffer = new ArraySegment<byte>(new byte[stream.Position]);
                 stream.Position = 0;
 
                 ArraySegment<byte> buffer;
