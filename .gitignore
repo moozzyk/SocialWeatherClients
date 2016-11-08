@@ -39,3 +39,8 @@ luac.out
 *.x86_64
 *.hex
 
+.vs/
+bin/
+obj/
+*.user
+project.lock.json
