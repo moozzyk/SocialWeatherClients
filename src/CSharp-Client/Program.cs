@@ -10,11 +10,11 @@ namespace SocialWeather
 {
     public class Program
     {
-        private const string Url = "ws://socialweather.azurewebsites.net/weather/ws?formatType=protobuf&format=binary";
+        private const string Url = "ws://localhost:5000/weather?formatType=protobuf";
 
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
-            new Program().Run().Wait();
+            await new Program().Run();
         }
 
         private Random rand = new Random();
