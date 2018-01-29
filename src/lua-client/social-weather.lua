@@ -27,4 +27,5 @@ ws:on("close", function(_, status)
   ws = nil -- required to lua gc the websocket client
 end)
 
-ws:connect('ws://socialweather.azurewebsites.net/weather/ws?formatType=pipe')
+-- update the url to point to your social weather server
+ws:connect('ws://socialweather.azurewebsites.net/weather?formatType=pipe')
