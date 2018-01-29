@@ -10,11 +10,11 @@ namespace SocialWeather
 {
     public class Program
     {
-        private const string Url = "ws://socialweather.azurewebsites.net/weather/ws?formatType=protobuf&format=binary";
+        private const string Url = "ws://localhost:5000/weather?formatType=protobuf";
 
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
-            new Program().Run().Wait();
+            await new Program().Run();
         }
 
         private Random rand = new Random();
@@ -83,8 +83,7 @@ namespace SocialWeather
                 outputStream.Flush();
                 stream.Position = 0;
 
-                ArraySegment<byte> buffer;
-                var t = stream.TryGetBuffer(out buffer);
+                var t = stream.TryGetBuffer(out var buffer);
                 await ws.SendAsync(buffer, WebSocketMessageType.Binary, /*endOfMessage*/ true, CancellationToken.None);
             }
         }
